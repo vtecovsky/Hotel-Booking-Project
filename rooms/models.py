@@ -8,3 +8,6 @@ class Room(models.Model):
     room_number = models.CharField(max_length=10)
     capacity = models.PositiveIntegerField()
     price = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.hotel} | {self.room_number}"

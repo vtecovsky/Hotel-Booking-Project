@@ -11,3 +11,6 @@ class Booking(models.Model):
     rooms = models.ManyToManyField(Room)
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField()
+
+    def __str__(self):
+        return f"{self.hotel} | {self.user} | {self.rooms}"
