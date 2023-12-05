@@ -6,7 +6,9 @@ class Hotel(models.Model):
     name = models.CharField(max_length=64)
     address = models.CharField(max_length=255)
     rate = models.FloatField()
-    reviews = models.ForeignKey("Review", on_delete=models.CASCADE, blank=True, null=True)
+    reviews = models.ForeignKey(
+        "Review", on_delete=models.CASCADE, blank=True, null=True
+    )
 
     def __str__(self):
         return self.name

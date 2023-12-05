@@ -3,8 +3,9 @@ from django.db import models
 
 
 class User(AbstractUser):
-    is_verified_email = models.BooleanField(default=False)
-    email = models.EmailField(blank=True, unique=True)
+    phone_number = models.CharField("Телефон", max_length=11, blank=True, null=True)
+
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone_number']
 
     def __str__(self):
         return f"{self.username}"
